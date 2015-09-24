@@ -51,7 +51,7 @@ a.button.activated {
     background-color: #5CD953;
     color: #fff;
 }
-.col {
+.col1 {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -moz-box-flex: 1;
@@ -66,8 +66,9 @@ a.button.activated {
     text-overflow: ellipsis;
     white-space: nowrap;
     border: solid 1px #DDDDDD;
+    padding: 5px;
 }
-.col.activated{
+.col1.activated{
 	
     border-bottom: 0px;
     background-color: #5CD953;

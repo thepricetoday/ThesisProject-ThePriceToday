@@ -106,7 +106,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-
+.state('app.single3', {
+    url: '/report/3',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/ThankyouMsg.html',
+        controller: 'PlaylistCtrl'
+      }
+    }
+  }) 
+;
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/products');
 });
