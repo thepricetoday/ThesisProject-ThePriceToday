@@ -1,6 +1,8 @@
 /* Empty. Add your own CSS if you like */
 /**Nav**/
-
+h1.title.title-left {
+    color: #fff !important;
+}
 .tabs-striped.tabs-color-assertive .tab-item.tab-item-active, .tabs-striped.tabs-color-assertive .tab-item.active, .tabs-striped.tabs-color-assertive .tab-item.activated {
     color: #fff;
     background-color: #5CD953;
@@ -83,6 +85,17 @@ label.item-step .row{
 }
 .item{
 	
+}
+
+   .col-list {
+    font-size: 15px;
+    width: 25%;
+    margin: 0px 8px 0px 0px;
+}
+
+.col-name > strong {
+    font-size: 20px;
+    
 }
 /**Header**/
 .title.title-left.header-item:after {
