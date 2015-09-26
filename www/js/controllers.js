@@ -53,4 +53,70 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+})
+.controller('Exit', function($scope, $stateParams) {
+  ionic.Platform.ready(function(){
+    // will execute when device is ready, or immediately if the device is already ready.
+  });
+
+  var deviceInformation = ionic.Platform.device();
+
+  var isWebView = ionic.Platform.isWebView();
+  var isIPad = ionic.Platform.isIPad();
+  var isIOS = ionic.Platform.isIOS();
+  var isAndroid = ionic.Platform.isAndroid();
+  var isWindowsPhone = ionic.Platform.isWindowsPhone();
+
+  var currentPlatform = ionic.Platform.platform();
+  var currentPlatformVersion = ionic.Platform.version();
+
+  ionic.Platform.exitApp(); // stops the app
+})
+
+
+.controller('IntroCtrl', function($scope, $timeout, $ionicLoading,$ionicPopup) {
+
+  // Setup the loader
+  $ionicLoading.show({
+    templateUrl:'templates/intro.html',
+    animation: 'fade-in',
+    showBackdrop: false,
+    maxWidth: 10,
+    showDelay: 0
+  });
+  // Set a timeout to clear loader, however you would actually call the $ionicLoading.hide(); method whenever everything is ready or loaded.
+  $timeout(function () {
+    $ionicLoading.hide();
+  }, 2000);
+  
+  // Triggered on a button click, or some other target
+$scope.showPopup = function() {
+  $scope.data = {}
+
+  // An elaborate, custom popup
+  var myPopup = $ionicPopup.show({
+    template: '<input  type="text" placeholder="Product Quantity">',
+    title: 'Add to Basket List',
+    scope: $scope,
+    buttons: [
+      { text: 'Cancel' },
+      {
+        text: '<b>Add</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.wifi) {
+            //don't allow the user to close unless he enters wifi password
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
+          }
+        }
+      }
+    ]
+  });
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+ };
+})
+;

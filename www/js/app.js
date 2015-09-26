@@ -37,8 +37,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: '/products',
       views: {
         'menuContent': {
-          templateUrl: 'templates/products.html'
-          
+          templateUrl: 'templates/products.html',
+          controller: 'IntroCtrl'
         }
       }
     })
@@ -60,21 +60,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.exit', {
+      url: '/exit',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: '/',
+          controller: 'Exit'
         }
       }
     })
